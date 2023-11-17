@@ -3,11 +3,11 @@ import { ref } from 'vue'
 
 const links = ref([
   {
-    link: 'github',
+    link: 'https://github.com/Kolia913',
     icon: 'mdi-github'
   },
   {
-    link: 'linkedin',
+    link: 'https://www.linkedin.com/in/mykola-balii-507846282/',
     icon: 'mdi-linkedin'
   }
 ])
@@ -19,14 +19,9 @@ const links = ref([
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        v-for="item in links"
-        :key="item.link"
-        class="mx-4"
-        :icon="item.icon"
-        variant="plain"
-        size="small"
-      ></v-btn>
+      <a v-for="item in links" :key="item.link" :href="item.link">
+        <v-btn class="mx-4" :icon="item.icon" variant="plain" size="small"></v-btn>
+      </a>
     </div>
 
     <div :class="$style.footer__bottom">
